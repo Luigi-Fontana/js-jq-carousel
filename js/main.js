@@ -1,9 +1,19 @@
 $(document).ready(function(){
+    var giriSlide = 0;
+    var clock = setInterval(function(){
+        nextSlide()
+        giriSlide++;
+        if (giriSlide === 12) {
+            clearInterval(clock);
+        }
+    }, 3000);
     $('.next').click(function(){
         nextSlide(); // al click fai questa funzione
+        clearInterval(clock);
     });
     $('.prev').click(function(){
         prevSlide(); // al click fai questa funzione
+        clearInterval(clock);
     });
 });
 
