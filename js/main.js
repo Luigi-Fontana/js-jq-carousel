@@ -10,10 +10,18 @@ $(document).ready(function(){
             }
         }
     }, 3000);
+    $('.images').mouseenter(function(){ // quando metti il cursore sull'immagine
+        isPaused = true; // metti in pausa
+    });
+    $('.images').mouseleave(function(){ // quando togli il cursore dall'immagine
+        setTimeout(function(){ // dopo 1 secondo togli la pausa
+            isPaused = false;
+        }, 1000);
+    });
     $('.next').click(function(){
         nextSlide(); // al click fai questa funzione
-        isPaused = true; // metti in pausa
-        setTimeout(function(){ // dopo 3 secondi annulla la pausa
+        isPaused = true;
+        setTimeout(function(){
             isPaused = false;
         }, 3000);
     });
