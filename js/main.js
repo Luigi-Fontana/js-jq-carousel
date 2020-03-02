@@ -52,6 +52,46 @@ $(document).ready(function(){
             isPaused = false;
         }, 1000);
     });
+    $('.fa-circle.first').click(function(){
+        $('.images img').removeClass('active');
+        $('.images img.first').addClass('active');
+        $('.fa-circle').removeClass('active');
+        $('.fa-circle.first').addClass('active');
+        isPaused = true;
+        setTimeout(function(){
+            isPaused = false;
+        }, 3000);
+    });
+    $('.fa-circle.second').click(function(){
+        $('.images img').removeClass('active');
+        $('.images img.second').addClass('active');
+        $('.fa-circle').removeClass('active');
+        $('.fa-circle.second').addClass('active');
+        isPaused = true;
+        setTimeout(function(){
+            isPaused = false;
+        }, 3000);
+    });
+    $('.fa-circle.third').click(function(){
+        $('.images img').removeClass('active');
+        $('.images img.third').addClass('active');
+        $('.fa-circle').removeClass('active');
+        $('.fa-circle.third').addClass('active');
+        isPaused = true;
+        setTimeout(function(){
+            isPaused = false;
+        }, 3000);
+    });
+    $('.fa-circle.last').click(function(){
+        $('.images img').removeClass('active');
+        $('.images img.last').addClass('active');
+        $('.fa-circle').removeClass('active');
+        $('.fa-circle.last').addClass('active');
+        isPaused = true;
+        setTimeout(function(){
+            isPaused = false;
+        }, 3000);
+    });
 });
 
 function nextSlide() {
