@@ -17,14 +17,39 @@ body {
 }
 
 .slideshow {
-    width: 650px;
-    height: 450px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
     position: relative;
     background-color: rgba(0,0,0,0.6);
     border-radius: 50px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-button {
+    background-color: rgba(0,0,0,0.5);
+    margin: 30px 0;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.overlay-button i {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.overlay-button i.active {
+    display: block;
 }
 
 .prev, .next {
@@ -55,14 +80,11 @@ body {
 
 .slider-nav {
     padding: 10px 5px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: rgba(0,0,0,0.5);
     border-radius: 50px;
     display: flex;
     align-items: center;
+    margin: 30px 0;
 }
 
 .slider-nav i {

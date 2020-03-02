@@ -12,13 +12,19 @@ $(document).ready(function(){
     }, 3000);
     $('.images').mouseenter(function(){ // quando metti il cursore sull'immagine
         isPaused = true; // metti in pausa
+        $('.fa-play-circle').addClass('active');
+        $('.fa-pause-circle').removeClass('active');
     });
     $('.images').mouseleave(function(){ // quando togli il cursore dall'immagine
         setTimeout(function(){ // dopo 1 secondo togli la pausa
             isPaused = false;
         }, 1000);
+        $('.fa-pause-circle').addClass('active');
+        $('.fa-play-circle').removeClass('active');
     });
     $('.next').click(function(){
+        $('.fa-play-circle').removeClass('active');
+        $('.fa-pause-circle').addClass('active');
         nextSlide(); // al click fai questa funzione
         isPaused = true;
         setTimeout(function(){
@@ -26,11 +32,25 @@ $(document).ready(function(){
         }, 3000);
     });
     $('.prev').click(function(){
+        $('.fa-play-circle').removeClass('active');
+        $('.fa-pause-circle').addClass('active');
         prevSlide();
         isPaused = true;
         setTimeout(function(){
             isPaused = false;
         }, 3000);
+    });
+    $('.fa-pause-circle').click(function(){
+        $('.fa-pause-circle').removeClass('active');
+        $('.fa-play-circle').addClass('active');
+        isPaused = true;
+    });
+    $('.fa-play-circle').click(function(){
+        $('.fa-play-circle').removeClass('active');
+        $('.fa-pause-circle').addClass('active');
+        setTimeout(function(){
+            isPaused = false;
+        }, 1000);
     });
 });
 
