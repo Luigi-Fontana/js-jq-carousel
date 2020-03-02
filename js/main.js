@@ -1,19 +1,28 @@
 $(document).ready(function(){
     var giriSlide = 0;
+    var isPaused = false; // variabile sentinella
     var clock = setInterval(function(){
-        nextSlide()
-        giriSlide++;
-        if (giriSlide === 12) {
-            clearInterval(clock);
+        if (isPaused == false) { // se non è in pausa
+            nextSlide()
+            giriSlide++;
+            if (giriSlide === 16) { // quando ha fatto 16 giri automatici di slide stoppa tutto
+                clearInterval(clock);
+            }
         }
     }, 3000);
     $('.next').click(function(){
         nextSlide(); // al click fai questa funzione
-        clearInterval(clock);
+        isPaused = true; // metti in pausa
+        setTimeout(function(){ // dopo 3 secondi annulla la pausa
+            isPaused = false;
+        }, 3000);
     });
     $('.prev').click(function(){
-        prevSlide(); // al click fai questa funzione
-        clearInterval(clock);
+        prevSlide();
+        isPaused = true;
+        setTimeout(function(){
+            isPaused = false;
+        }, 3000);
     });
 });
 
