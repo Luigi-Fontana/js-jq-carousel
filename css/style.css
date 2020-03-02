@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F2.bp.blogspot.com%2F_jFM-Fd8NDFE%2FTLO5pzjNy1I%2FAAAAAAAAKY0%2FbDarip1DwVc%2Fs1600%2FRusticCharm-3.jpg&f=1&nofb=1');
+    background-size: cover;
+}
+
 .container {
     height: 100vh;
     display: flex;
@@ -12,16 +17,22 @@
 }
 
 .slideshow {
+    width: 650px;
+    height: 450px;
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 50px;
 }
 
 .prev, .next {
     display: flex;
     justify-content: center;
-    font-size: 30px;
-    width: 50px;
+    font-size: 40px;
+    color: white;
+    width: 100px;
     cursor: pointer;
 }
 
@@ -35,6 +46,7 @@
     height: 100%;
     object-fit: cover;
     display: none;
+    border: 5px solid white;
 }
 
 .images img.active {
@@ -42,19 +54,20 @@
 }
 
 .slider-nav {
-    padding: 10px 15px;
+    padding: 10px 5px;
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0,0,0,0.5);
-    border-radius: 10px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
 }
 
 .slider-nav i {
     padding: 0 5px;
+    font-size: 20px;
 }
 
 .slider-nav i.active {
